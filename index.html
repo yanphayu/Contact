@@ -14,9 +14,12 @@
   </head>
   <body>
     <div class="container">
-      <div class="global-title">CHANNEL & PAGE</div>
+      <div class="global-title">CHANNEL & PAGE 
+        <input type="color" id="bg" value="#ffff00">
+        <input type="color" id="accent" value="#ff0000">
+      </div>
       <div class="global">
-          <a target="_blank" href="https://github.com/yanphayu">GITHUB</a>
+        <a target="_blank" href="https://github.com/yanphayu">GITHUB</a>
         <a target="_blank" href="https://t.me/+F0WtousuDAFiNjI1">TELEGRAM CHANNEL</a>
         <a target="_blank" href="https://www.facebook.com/share/1BPaWbximo/?mibextid=wwXIfr">FACEBOOK PAGE</a>
         <a target="_blank" href="https://www.tiktok.com/@yukkkkkkkkkkk.1">TIKTOK CHANNEL</a>
@@ -29,5 +32,21 @@
         <a target="_blank" href="https://www.facebook.com/share/1Lx3g941bf/?mibextid=wwXIfr">FACEBOOK</a>
       </div>
     </div>
+
+    <script>
+      const bgInput = document.getElementById("bg");
+      const accentInput = document.getElementById("accent");
+      const rootElement = document.documentElement;
+
+      function updateTheme() {
+        rootElement.style.setProperty('--bg', bgInput.value);
+        rootElement.style.setProperty('--accent', accentInput.value);
+      }
+
+      updateTheme();
+
+      bgInput.addEventListener('input', updateTheme);
+      accentInput.addEventListener('input', updateTheme);
+    </script>
   </body>
 </html>
